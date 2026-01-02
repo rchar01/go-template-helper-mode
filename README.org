@@ -6,7 +6,7 @@ syntax highlighting on top of another major mode (commonly YAML, but not
 limited to it).
 
 It is especially useful for files that embed Go templates inside a
-""host"" language, such as:
+"host" language, such as:
 - YAML manifests with templating
 - configuration files containing ={{ ... }}= snippets
 - Helm charts (Kubernetes manifests under =templates/=)
@@ -121,7 +121,7 @@ Disabling removes the keywords and flushes again.
 * Related: go-template-mode (major mode)
 
 If you also edit standalone Go text/template files (for example =.tmpl= or
-=.tpl= files that are *primarily* templates rather than ""templated YAML""),
+=.tpl= files that are *primarily* templates rather than "templated YAML"),
 you may want a dedicated major mode.
 
 This project is designed to complement a separate major mode:
