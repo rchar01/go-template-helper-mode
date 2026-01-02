@@ -42,8 +42,6 @@
 
 ;;; Code:
 
-;;; Code:
-
 (defgroup go-template-helper nil
   "Overlay Go template highlighting on top of other major modes."
   :group 'faces
