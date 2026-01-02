@@ -136,4 +136,5 @@ In short:
 - Use =go-template-mode= when the whole buffer is a Go template.
   
 * License
+
 GPL-3.0-or-later.  See =COPYING=.
