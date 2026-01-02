@@ -118,5 +118,22 @@ Disabling removes the keywords and flushes again.
 - Regex-based matching may produce false positives in edge cases
 - Comment highlighting requires a complete ={{/* ... */}}= pair
 
+* Related: go-template-mode (major mode)
+
+If you also edit standalone Go text/template files (for example =.tmpl= or
+=.tpl= files that are *primarily* templates rather than ""templated YAML""),
+you may want a dedicated major mode.
+
+This project is designed to complement a separate major mode:
+
+- =go-template-mode=: a lightweight, fast major mode for Go text/template
+  files.  It focuses on cheap, incremental =font-lock= without custom
+  parsers/caches.
+
+In short:
+- Use =go-template-helper-mode= when templates are embedded inside another
+  host format (YAML, config files, etc.).
+- Use =go-template-mode= when the whole buffer is a Go template.
+  
 * License
 GPL-3.0-or-later.  See =COPYING=.
