@@ -11,3 +11,6 @@
 
 # Agent patch artifacts
 /.agent/patches/
+
+# Agent sandbox worktrees
+/.agent/worktrees/
