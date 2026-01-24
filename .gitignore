@@ -8,3 +8,6 @@
 # Emacs backups
 *~
 \#*\#
+
+# Agent patch artifacts
+/.agent/patches/
