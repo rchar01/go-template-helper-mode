@@ -1,11 +1,11 @@
-;;; go-template-helper-mode.el --- Overlay Go template highlighting -*- lexical-binding: t; -*-
+;;; go-template-helper-mode.el --- Go text/template overlay highlighting (Helm/YAML) -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2026 Robert Charusta
 
 ;; Author: Robert Charusta <rch-public@posteo.net>
 ;; Maintainer: Robert Charusta <rch-public@posteo.net>
 ;; URL: https://codeberg.org/rch/go-template-helper-mode
-;; Version: 1.0.1
+;; Version: 1.0.2
 ;; Keywords: tools, faces
 ;; Package-Requires: ((emacs "28.1"))
 
