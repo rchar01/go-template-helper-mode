@@ -38,7 +38,7 @@ lists in sync.
 2. In your init file:
 
 #+begin_src elisp
-(require 'go-template-helper-mode)
+  (require 'go-template-helper-mode)
 #+end_src
 
 ** With =use-package=
@@ -46,17 +46,17 @@ lists in sync.
 If you have it installed from MELPA:
 
 #+begin_src elisp
-(use-package go-template-helper-mode
-  :ensure t
-  :hook (yaml-mode . my/go-template-helper-enable))
+  (use-package go-template-helper-mode
+    :ensure t
+    :hook (yaml-mode . my/go-template-helper-enable))
 #+end_src
 
 If you're installing from a local checkout:
 
 #+begin_src elisp
-(use-package go-template-helper-mode
-  :load-path "/path/to/repo/"
-  :commands (go-template-helper-mode))
+  (use-package go-template-helper-mode
+    :load-path "/path/to/repo/"
+    :commands (go-template-helper-mode))
 #+end_src
 
 * Usage
@@ -64,21 +64,21 @@ If you're installing from a local checkout:
 Enable it in buffers where Go templates are embedded:
 
 #+begin_src elisp
-(add-hook 'yaml-mode-hook #'go-template-helper-mode)
+  (add-hook 'yaml-mode-hook #'go-template-helper-mode)
 #+end_src
 
 Enable only in selected files/directories:
 
 #+begin_src elisp
-(defun my-go-template-helper-maybe-enable ()
-  "Enable `go-template-helper-mode' in templated YAML-like files."
-  (when (and buffer-file-name
-             (string-match-p
-              (rx "/templates/" (* any) "." (or "yaml" "yml" "tpl") eos)
-              buffer-file-name))
-    (go-template-helper-mode 1)))
+  (defun my-go-template-helper-maybe-enable ()
+    "Enable `go-template-helper-mode' in templated YAML-like files."
+    (when (and buffer-file-name
+               (string-match-p
+                (rx "/templates/" (* any) "." (or "yaml" "yml" "tpl") eos)
+                buffer-file-name))
+      (go-template-helper-mode 1)))
 
-(add-hook 'yaml-mode-hook #'my-go-template-helper-maybe-enable)
+  (add-hook 'yaml-mode-hook #'my-go-template-helper-maybe-enable)
 #+end_src
 
 * Example configuration (enable only in templates/)
@@ -88,20 +88,20 @@ you can enable the mode only for files under a =templates/= directory and
 with typical template extensions:
 
 #+begin_src elisp
-(defun my/go-template-helper-enable ()
-  "Enable go-template-helper-mode when appropriate.
-Activates `go-template-helper-mode' if the buffer's file is located in a
-templates/ directory and has a .yaml, .yml, or .tpl extension."
-  (when (and buffer-file-name
-             (string-match-p
-              "/templates/.*\\(?:\\.ya?ml\\|\\.tpl\\)\\'"
-              buffer-file-name))
-    (require 'go-template-helper-mode)
-    (go-template-helper-mode 1)))
+  (defun my/go-template-helper-enable ()
+    "Enable go-template-helper-mode when appropriate.
+  Activates `go-template-helper-mode' if the buffer's file is located in a
+  templates/ directory and has a .yaml, .yml, or .tpl extension."
+    (when (and buffer-file-name
+               (string-match-p
+                "/templates/.*\\(?:\\.ya?ml\\|\\.tpl\\)\\'"
+                buffer-file-name))
+      (require 'go-template-helper-mode)
+      (go-template-helper-mode 1)))
 
-(use-package go-template-helper-mode
-  :load-path "~/.emacs.d/lisp/go-template-helper-mode"
-  :hook (yaml-mode . my/go-template-helper-enable))
+  (use-package go-template-helper-mode
+    :load-path "~/.emacs.d/lisp/go-template-helper-mode"
+    :hook (yaml-mode . my/go-template-helper-enable))
 #+end_src
 
 Adjust the path, directory name, and extensions to match your project
